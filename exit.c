@@ -112,7 +112,7 @@ char *set_path(path_node *h, int *w, ssize_t *size_getlin,
 			exit(EXIT_FAILURE);
 		_strcpy(Buff, h->str);
 		_strcat(Buff, "/");
-		_strcat(Buff, strtok(buff[0], "\n"));
+		_strcat(Buff, my_strtok(buff[0], "\n"));
 		*w = stat(Buff, Buf);
 		h = h->next;
 	}

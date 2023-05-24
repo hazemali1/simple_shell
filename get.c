@@ -33,7 +33,7 @@ char *my_getenv(char *name)
 */
 char *my_strtok(char *str, char *delim)
 {
-	char *last = NULL;
+	static char *last = NULL;
 	char *tok;
 
 	if (str != NULL)
