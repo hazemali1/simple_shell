@@ -164,8 +164,10 @@ void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 					_putchar('\n');
 				}
 				else if (buff[1][1] == '?')
+				{
 					print_number(WEXITSTATUS(*status));
 					_putchar('\n');
+				}
 				else if (buff[1][1])
 				{
 					while (buff[1][Ec])
