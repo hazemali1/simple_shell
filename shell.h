@@ -64,6 +64,8 @@ int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 int _putchar(char c);
 void set_arr(char *symo, int *coun, int *Che, char *buf);
+void help(int *sy, int *w, int *er, int *Sta);
+void print_echo(char *Echo);
 
 
 #endif
