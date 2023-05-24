@@ -69,6 +69,6 @@ void print_echo(char *Echo);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *fill_an_array(void *a, int el, unsigned int len);
 char *_memcpy(char *dest, char *src, unsigned int n);
-
+int strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
