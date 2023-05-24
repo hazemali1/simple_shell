@@ -30,9 +30,11 @@ void help(int *sy, int *w, int *er, int *Sta)
  * @sy: PArameter9
  * @Sta: Parameter10
 */
-void handle_input(char *buf, char *Buff, int *er, int *w, int *e, int *cd,
+char *handle_input(char *buf, int *er, int *w, int *e, int *cd,
 		int *v, struct stat *Buf, int *sy, int *Sta)
 {
+	char *Buff;
+
 	if (buf[0] == '/' || (buf[0] == '.' && buf[1] == '/'))
 	{
 		Buff = malloc(sizeof(char) * _strlen(buf));
@@ -72,6 +74,7 @@ void handle_input(char *buf, char *Buff, int *er, int *w, int *e, int *cd,
 		write(STDERR_FILENO, "bash: syntax error near unexpected token `;'\n", 45);
 		help(sy, w, er, Sta);
 	}
+	return (Buff);
 }
 
 /**

@@ -42,7 +42,7 @@ while (1)
 	else
 		buf = read_file_as_input(&fr, &size_getline, REad, &i, &f);
 	parse_input(buf, symo, &pop, &And, &count);
-	handle_input(buf, Buff, &er, &w, &e, &cd, &v, &Buf, &sy, &Sta);
+	Buff = handle_input(buf, &er, &w, &e, &cd, &v, &Buf, &sy, &Sta);
 	parse_command(BUf, buf, env, buff, &size, Buff, &w, &e);
 	if (e == 0)
 		handle_echo(buff, Buff, ec, &Ec, Echo, &w, &v, &pid, &status);
@@ -50,7 +50,8 @@ while (1)
 	if (cd == 1)
 		ch_dir(buff, home, symo, &count, &_cd, &Sta, &Buf, &ch);
 	h = head;
-	Buff = set_path(h, &w, &size_getline, buff, &Buf);
+	if(w == -1 && h != NULL)
+		Buff = set_path(h, &w, &size_getline, buff, &Buf);
 	handle_error(&w, &non, buff, Buff, argv[1], &Sta, &er, &sy);
 	if (w == 0 && e == 0 && cd == 0 && v == 0)
 		execute_command(buff, &s, &status);

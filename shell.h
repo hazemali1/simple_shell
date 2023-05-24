@@ -34,7 +34,7 @@ void print_number(int n);
 path_node *get_path_list();
 char **read_file(char *path, int *non, int *f);
 void parse_input(char *buf, char *symo, int *pop, int *And, int *coun);
-void handle_input(char *buf, char *Buff, int *er, int *w, int *e, int *cd,
+char *handle_input(char *buf, int *er, int *w, int *e, int *cd,
 		int *v, struct stat *Buf, int *sy, int *Sta);
 void parse_command(char *BUf, char *buf, char *env, char **buff, int *siz,
 		char *Buff, int *w, int *e);
