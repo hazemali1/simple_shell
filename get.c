@@ -44,14 +44,14 @@ char *my_strtok(char *str, char *delim)
 	{
 		return (NULL);
 	}
-	while (*last != '\0' && strchr(delim, *last) != NULL)
+	while (*last != '\0' && _strchr(delim, *last) != NULL)
 	{
 		last++;
 	}
 	tok = last;
 	while (*last != '\0')
 	{
-		if (strchr(delim, *last) != NULL)
+		if (_strchr(delim, *last) != NULL)
 		{
 			*last++ = '\0';
 			break;
