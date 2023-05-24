@@ -56,5 +56,13 @@ char *read_file_as_input(int *fr, ssize_t *size_getline,
 		char **REad, int *ii, int *f);
 char *my_buff(char *symo, ssize_t *size_getline, int *coun);
 void execute_command(char **buff, pid_t *s, int *status);
+char *_strcat(char *dest, char *src);
+int _atoi(char *s);
+char *_strchr(char *s, char c);
+int _strlen(char *s);
+int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
+int _putchar(char c);
+
 
 #endif

@@ -7,7 +7,7 @@
 char *_getLineFunc()
 {
 	char *arr, c = 0;
-	int i, memosize = BUFSIZE, rd;
+	int i, memosize = 1024, rd;
 
 	arr = malloc(memosize);
 	if (arr == NULL)
