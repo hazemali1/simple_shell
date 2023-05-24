@@ -102,8 +102,7 @@ void free_buf(int *fr, int *count, char *buf, char *env, int *f,
 char *read_input(ssize_t *size_getline)
 {
 	char *buf;
-	size_t d = 0;
-		*size_getline = getline(&buf, &d, stdin);
+		buf = _getLineFunc();
 		if (*size_getline == -1)
 			exit(EXIT_FAILURE);
 		return (buf);
