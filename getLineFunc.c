@@ -1,14 +1,15 @@
-#include "main.h"
+#include "shell.h"
+
 /**
 * _getLineFunc - Read The Input from Keyboard
 * Return: Input
 */
 char *_getLineFunc()
 {
-char *arr, c = 0;
-int i, memosize = BUFSIZE, rd;
-arr = malloc(memosize);
+	char *arr, c = 0;
+	int i, memosize = 1024, rd;
 
+	arr = malloc(memosize);
 	if (arr == NULL)
 	{
 		free(arr);
