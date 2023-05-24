@@ -174,7 +174,7 @@ void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 					}
 					(Ec)--;
 					ec[Ec] = '\0';
-					Echo = getenv(ec);
+					Echo = my_getenv(ec);
 					if (Echo == NULL)
 						_putchar('\n');
 					else

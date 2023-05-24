@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	char *buff[1024], *buf, *Buff, *env, *BUf = NULL,
-		*home = getenv("HOME"), **REad, symo[1024], *Echo, ec[1024];
+		*home = my_getenv("HOME"), **REad, symo[1024], *Echo, ec[1024];
 	ssize_t size_getline;
 	size_t d = 0;
 	pid_t s, pid;

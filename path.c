@@ -8,7 +8,7 @@
 path_node *get_path_list()
 {
 	path_node *head = NULL;
-	char *path = getenv("PATH");
+	char *path = my_getenv("PATH");
 	char *tok = strtok(path, ":");
 
 	while (tok != NULL)
