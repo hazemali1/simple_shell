@@ -31,10 +31,12 @@ path_node *get_path_list()
  * read_file - Read from file
  *
  * @path: Parameter
+ * @non: P2
+ * @f: P3
  *
  * Return: Pointer
 */
-char **read_file(char *path)
+char **read_file(char *path, int *non, int *f)
 {
 	int o, si = 1;
 	ssize_t r;
@@ -61,6 +63,8 @@ char **read_file(char *path)
 	}
 	si--;
 	REad[si] = NULL;
+	*non = 1;
+	*f = 1;
 	if (close(o) == -1)
 	{
 		exit(EXIT_FAILURE);
