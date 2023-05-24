@@ -43,3 +43,30 @@ void execute_command(char **buff, pid_t *s, int *status)
 		else
 			waitpid(*s, status, 0);
 }
+
+/**
+ * _strncmp - Strncmp function
+ *
+ * @s1: P2
+ * @s2: P3
+ * @n: P3
+ *
+ * Return: Int
+*/
+int _strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t i;
+
+	for (i = 0; i < n; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		else if (s1[i] == '\0')
+		{
+			return (0);
+		}
+	}
+	return (0);
+}
