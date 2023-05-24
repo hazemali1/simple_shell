@@ -66,6 +66,9 @@ int _putchar(char c);
 void set_arr(char *symo, int *coun, int *Che, char *buf);
 void help(int *sy, int *w, int *er, int *Sta);
 void print_echo(char *Echo);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *fill_an_array(void *a, int el, unsigned int len);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 
 #endif
