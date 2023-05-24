@@ -20,7 +20,10 @@ char *my_buff(char *symo, ssize_t *size_getline, int *coun)
 	char *buf = malloc(sizeof(char) * _strlen(symo));
 
 	if (buf == NULL)
+	{
+		free(buf);
 		exit(1);
+	}
 	_strcpy(buf, symo);
 	*size_getline = _strlen(buf);
 	while (count >= 0)
