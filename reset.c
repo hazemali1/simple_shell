@@ -79,6 +79,7 @@ void reset_arr(int *coun, int *status, int *Sta, int *And, int *pop,
 void free_buf(int *fr, int *count, char *buf, char *env, int *f,
 		path_node *node)
 {
+	(void)env;
 	if (*fr == 0 && *count == 0)
 		free(buf);
 	else if (*count == 0)
@@ -102,8 +103,7 @@ char *read_input(ssize_t *size_getline)
 {
 	char *buf;
 	size_t d = 0;
-		buf = _getLineFunc();
-		*size_getline = _strlen(buf);
+		*size_getline = getline(&buf, &d, stdin);
 		if (*size_getline == -1)
 			exit(EXIT_FAILURE);
 		return (buf);

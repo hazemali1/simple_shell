@@ -1,5 +1,10 @@
 #include "shell.h"
 
+char *my_buff(char *symo, ssize_t *size_getline, int *coun);
+void execute_command(char **buff, pid_t *s, int *status);
+int _strncmp(char *s1, char *s2, size_t n);
+
+
 /**
  * my_buff - Buffer
  *
@@ -12,8 +17,10 @@
 char *my_buff(char *symo, ssize_t *size_getline, int *coun)
 {
 	int count = *coun;
-	char *buf;
+	char *buf = malloc(sizeof(char) * _strlen(symo));
 
+	if (buf == NULL)
+		exit(1);
 	_strcpy(buf, symo);
 	*size_getline = _strlen(buf);
 	while (count >= 0)
@@ -53,7 +60,7 @@ void execute_command(char **buff, pid_t *s, int *status)
  *
  * Return: Int
 */
-int _strncmp(const char *s1, const char *s2, size_t n)
+int _strncmp(char *s1, char *s2, size_t n)
 {
 	size_t i;
 

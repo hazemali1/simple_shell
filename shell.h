@@ -10,6 +10,8 @@
 #include <sys/wait.h>
 #include <string.h>
 
+extern char **environ;
+
 /**
  * struct node - My struct
  *
@@ -22,15 +24,15 @@ typedef struct node
 	struct node *next;
 } path_node;
 
-char *my_getenv(const char *name);
-char *my_strtok(char *str, const char *delim);
+char *my_getenv(char *name);
+char *my_strtok(char *str, char *delim);
 void my_env(void);
 void resetFunc(char *str);
 char *_getLineFunc();
 void _free(path_node *node);
 void print_number(int n);
 path_node *get_path_list();
-char **read_file(char *path);
+char **read_file(char *path, int *non, int *f);
 void parse_input(char *buf, char *symo, int *pop, int *And, int *coun);
 void handle_input(char *buf, char *Buff, int *er, int *w, int *e, int *cd,
 		int *v, struct stat *Buf, int *sy, int *Sta);
@@ -67,8 +69,8 @@ void set_arr(char *symo, int *coun, int *Che, char *buf);
 void help(int *sy, int *w, int *er, int *Sta);
 void print_echo(char *Echo);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void *fill_an_array(void *a, int el, unsigned int len);
+void *fill_all_array(void *a, int el, unsigned int len);
 char *_memcpy(char *dest, char *src, unsigned int n);
-int strncmp(const char *s1, const char *s2, size_t n);
+int _strncmp(char *s1, char *s2, size_t n);
 
 #endif

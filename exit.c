@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 
 /**
  * print_echo - Print buff
@@ -56,14 +56,14 @@ void ch_dir(char **buff, char *home, char *symo, int *count,
 			buff[1] = home;
 		if (_strcmp(buff[1], "-") == 0)
 		{
-			if (cwd)
+			if (Cwd[0] != '\0')
 			{
 				symo[0] = 'p';
 				symo[1] = 'w';
 				symo[2] = 'd';
 				symo[3] = '\0';
 				*count = 4;
-				_strcpy(buff[1], cwd);
+				_strcpy(buff[1], Cwd);
 			}
 			else
 			{
@@ -112,7 +112,7 @@ char *set_path(path_node *h, int *w, ssize_t *size_getlin,
 			exit(EXIT_FAILURE);
 		_strcpy(Buff, h->str);
 		_strcat(Buff, "/");
-		_strcat(Buff, my_strtok(buff[0], "\n"));
+		_strcat(Buff, strtok(buff[0], "\n"));
 		*w = stat(Buff, Buf);
 		h = h->next;
 	}

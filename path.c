@@ -8,8 +8,8 @@
 path_node *get_path_list()
 {
 	path_node *head = NULL;
-	char *path = my_getenv("PATH");
-	char *tok = my_strtok(path, ":");
+	char *path = getenv("PATH");
+	char *tok = strtok(path, ":");
 
 	while (tok != NULL)
 	{
@@ -22,7 +22,7 @@ path_node *get_path_list()
 		_strcpy(node->str, tok);
 		node->next = head;
 		head = node;
-		tok = my_strtok(NULL, ":");
+		tok = strtok(NULL, ":");
 	}
 	return (head);
 }
@@ -53,11 +53,11 @@ char **read_file(char *path, int *non, int *f)
 		exit(EXIT_FAILURE);
 	}
 	REad = malloc(sizeof(char *) * _strlen(Read));
-	Re = my_strtok(Read, "\n");
+	Re = strtok(Read, "\n");
 	REad[0] = Re;
 	while (Re != NULL)
 	{
-		Re = my_strtok(NULL, "\n");
+		Re = strtok(NULL, "\n");
 		REad[si] = Re;
 		si++;
 	}

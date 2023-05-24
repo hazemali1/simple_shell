@@ -38,7 +38,7 @@ void handle_input(char *buf, char *Buff, int *er, int *w, int *e, int *cd,
 		Buff = malloc(sizeof(char) * _strlen(buf));
 		if (Buff == NULL)
 			exit(EXIT_FAILURE);
-		_strcpy(Buff, my_strtok(buf, "\n"));
+		_strcpy(Buff, strtok(buf, "\n"));
 		*w = stat(strtok(Buff, " "), Buf);
 		*er = 1;
 	}
@@ -91,8 +91,8 @@ void parse_command(char *BUf, char *buf, char *env, char **buff,
 {
 	int size = 1;
 
-	BUf = my_strtok(buf, "\n");
-	env = my_strtok(BUf, " ");
+	BUf = strtok(buf, "\n");
+	env = strtok(BUf, " ");
 	buff[0] = env;
 	if (env == NULL)
 	{
@@ -106,7 +106,7 @@ void parse_command(char *BUf, char *buf, char *env, char **buff,
 	}
 	while (env != NULL)
 	{
-		env = my_strtok(NULL, " ");
+		env = strtok(NULL, " ");
 		buff[size] = env;
 		size++;
 	}
@@ -171,7 +171,7 @@ void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 					}
 					(Ec)--;
 					ec[Ec] = '\0';
-					Echo = my_getenv(ec);
+					Echo = getenv(ec);
 					if (Echo == NULL)
 						_putchar('\n');
 					else
