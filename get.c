@@ -10,7 +10,7 @@
 */
 char *my_strtok(char *str, char *delim)
 {
-	static char *last = NULL;
+	static char *last;
 	char *tok;
 
 	if (str != NULL)

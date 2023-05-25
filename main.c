@@ -7,7 +7,7 @@ char *_getLineFunc(void);
  *
  * Return: Always 0
 */
-int main()
+int main(void)
 {
 	pid_t pid;
 	int status;
