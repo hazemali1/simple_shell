@@ -89,10 +89,11 @@ char *handle_input(char *buf, int *er, int *w, int *e, int *cd,
  * @w: P7
  * @e: P8
 */
-void parse_command(char *BUf, char *buf, char *env, char **buff,
+void parse_command(char *BUf, char *buf, char **buff,
 		int *siz, char *Buff, int *w, int *e)
 {
 	int size = 1;
+	char *env;
 
 	BUf = my_strtok(buf, "\n");
 	env = my_strtok(BUf, " ");

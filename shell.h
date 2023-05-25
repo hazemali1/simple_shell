@@ -36,7 +36,7 @@ char **read_file(char *path, int *non, int *f);
 void parse_input(char *buf, char *symo, int *pop, int *And, int *coun);
 char *handle_input(char *buf, int *er, int *w, int *e, int *cd,
 		int *v, struct stat *Buf, int *sy, int *Sta);
-void parse_command(char *BUf, char *buf, char *env, char **buff, int *siz,
+void parse_command(char *BUf, char *buf, char **buff, int *siz,
 		char *Buff, int *w, int *e);
 void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 		int *w, int *v, pid_t *pid, int *status);
@@ -51,7 +51,7 @@ void reset(int *Sta, int *pop, int *And, int *Ec, int *che, int *sy, int *_cd,
 		int *v, int *cd, int *e, int *w, int *size, size_t *d);
 void reset_arr(int *coun, int *status, int *Sta, int *And,
 		int *pop, char *symo);
-void free_buf(int *fr, int *count, char *buf, char *env,
+void free_buf(int *fr, int *count, char *buf,
 		int *f, path_node *node);
 char *read_input(ssize_t *size_getline);
 char *read_file_as_input(int *fr, ssize_t *size_getline,
@@ -72,5 +72,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *fill_all_array(void *a, int el, unsigned int len);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int _strncmp(char *s1, char *s2, size_t n);
+char *_memset(char *s, char b, unsigned int n);
 
 #endif

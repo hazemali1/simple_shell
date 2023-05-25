@@ -76,15 +76,13 @@ void reset_arr(int *coun, int *status, int *Sta, int *And, int *pop,
  * @f: P5
  * @node: P6
 */
-void free_buf(int *fr, int *count, char *buf, char *env, int *f,
+void free_buf(int *fr, int *count, char *buf, int *f,
 		path_node *node)
 {
-	(void)env;
 	if (*fr == 0 && *count == 0)
 		free(buf);
 	else if (*count == 0)
 		buf = NULL;
-	env = NULL;
 	if (*f == 2)
 	{
 		_free(node);
