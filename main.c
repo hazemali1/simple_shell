@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	char *buff[1024], *buf, *Buff, *BUf = NULL,
 		*home = my_getenv("HOME"), **REad, symo[1024], *Echo, ec[1024];
-	ssize_t size_getline;
+	ssize_t size_getline = 0;
 	size_t d = 0;
 	pid_t s, pid;
 	int w = -1, size = 1, e = 0, non = 0, cd = 0, ch = -1, v = 0, er = 0,

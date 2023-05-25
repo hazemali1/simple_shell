@@ -15,6 +15,7 @@ char *_getLineFunc()
 		free(arr);
 		return (NULL);
 	}
+	_memset(arr, 0, memosize);
 
 	for (i = 0; c != EOF && c != '\n'; i++)
 	{
