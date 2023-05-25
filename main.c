@@ -61,7 +61,7 @@ if (Ee == 1)
 	free(Echo);
 	Ee = 0;
 }
-free(head)
+free(head);
 reset_arr(&count, &status, &Sta, &And, &pop, symo);
 reset(&Sta, &pop, &And, &Ec, &che, &sy, &_cd, &v, &cd, &e, &w, &size, &d);
 free_buf(&fr, &count, buf, &f, node);
