@@ -1,1 +1,2 @@
-shell project
+the simple_shell project
+the team project
