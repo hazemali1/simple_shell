@@ -45,7 +45,7 @@ while (1)
 	parse_command(BUf, buf, buff, &size, Buff, &w, &e);
 	if (e == 0)
 		handle_echo(buff, Buff, ec, &Ec, Echo, &w, &v, &pid, &status);
-	handle_exit(buf, buff, node);
+	handle_exit(buf, buff, head);
 	if (cd == 1)
 		ch_dir(buff, home, symo, &count, &_cd, &Sta, &Buf, &ch);
 	h = head;
