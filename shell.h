@@ -28,7 +28,7 @@ char *my_getenv(char *name);
 char *my_strtok(char *str, char *delim);
 void my_env(void);
 void resetFunc(char *str);
-char *_getLineFunc(void);
+char *_getLineFunc();
 void _free(path_node *node);
 void print_number(int n);
 path_node *get_path_list();
