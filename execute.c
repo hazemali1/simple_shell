@@ -1,10 +1,5 @@
 #include "shell.h"
 
-char *my_buff(char *symo, ssize_t *size_getline, int *coun);
-void execute_command(char **buff, pid_t *s, int *status);
-int _strncmp(char *s1, char *s2, size_t n);
-
-
 /**
  * my_buff - Buffer
  *
