@@ -18,7 +18,7 @@ char *my_getenv(char *name)
 		{
 			return (&((*env)[len + 1]));
 		}
-                env++;
+		env++;
 	}
 	return (NULL);
 }
@@ -33,7 +33,7 @@ char *my_getenv(char *name)
 */
 char *my_strtok(char *str, char *delim)
 {
-	static char *last = NULL;
+	static char *last;
 	char *tok;
 
 	if (str != NULL)

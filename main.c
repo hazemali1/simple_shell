@@ -49,7 +49,7 @@ while (1)
 	if (cd == 1)
 		ch_dir(buff, home, symo, &count, &_cd, &Sta, &Buf, &ch);
 	h = head;
-	if(w == -1 && h != NULL)
+	if (w == -1 && h != NULL)
 		Buff = set_path(h, &w, &size_getline, buff, &Buf);
 	handle_error(&w, &non, buff, Buff, argv[1], &Sta, &er, &sy);
 	if (w == 0 && e == 0 && cd == 0 && v == 0)
