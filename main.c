@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	pid_t s, pid;
 	int w = -1, size = 1, e = 0, non = 0, cd = 0, ch = -1, v = 0, er = 0,
 	    f = 0, i = 0, fr = 0, _cd = 0, sy = 0, che = 1, count = 0, Ec = 1,
-	    status, And = 0, pop = 0, Sta = 0, Ee = 0, ggg = 0;
+	    status, And = 0, pop = 0, Sta = 0, Ee = 0;
 	path_node *node = NULL, *head, *h;
 	struct stat Buf;
 
@@ -35,7 +35,7 @@ while (1)
 	if (non == 0 && count == 0)
 		write(STDOUT_FILENO, "($) ", 4);
 	if (f == 0 && count == 0)
-		buf = read_input(&size_getline);
+		buf = read_input(&size_getline, head);
 	else if (count != 0)
 		buf = my_buff(symo, &size_getline, &count);
 	else
@@ -45,7 +45,7 @@ while (1)
 	parse_command(BUf, buf, buff, &size, Buff, &w, &e);
 	if (e == 0)
 		handle_echo(buff, Buff, ec, &Ec, Echo, &w, &v, &pid, &status);
-	handle_exit(buf, buff, head, Echo);
+	handle_exit(buf, buff, head, Echo, Ee);
 	if (cd == 1)
 		ch_dir(buff, home, symo, &count, &_cd, &Sta, &Buf, &ch);
 	h = head;
@@ -56,14 +56,11 @@ while (1)
 		execute_command(buff, &s, &status);
 if (er == 1 || (w == 0 && e == 0 && cd == 0 && v == 0))
 	free(Buff);
-if (Ee == 1)
+if (Ee == 1 && count == 0)
 {
 	free(Echo);
 	Ee = 0;
 }
-if (ggg == 0)
-	_free(head);
-ggg = 1;
 reset_arr(&count, &status, &Sta, &And, &pop, symo);
 reset(&Sta, &pop, &And, &Ec, &che, &sy, &_cd, &v, &cd, &e, &w, &size, &d);
 free_buf(&fr, &count, buf, &f, node);

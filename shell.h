@@ -28,7 +28,7 @@ char *my_getenv(char *name);
 char *my_strtok(char *str, char *delim);
 void my_env(void);
 void resetFunc(char *str);
-char *_getLineFunc();
+char *_getLineFunc(path_node *head);
 void _free(path_node *node);
 void print_number(int n);
 path_node *get_path_list();
@@ -40,7 +40,7 @@ void parse_command(char *BUf, char *buf, char **buff, int *siz,
 		char *Buff, int *w, int *e);
 void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 		int *w, int *v, pid_t *pid, int *status);
-void handle_exit(char *buf, char **buff, path_node *node, char *Echo);
+void handle_exit(char *buf, char **buff, path_node *node, char *Echo, int Ee);
 void ch_dir(char **buff, char *home, char *symo, int *count, int *_cd,
 		int *Sta, struct stat *Buf, int *ch);
 char *set_path(path_node *h, int *w, ssize_t *size_getlin,
@@ -53,7 +53,7 @@ void reset_arr(int *coun, int *status, int *Sta, int *And,
 		int *pop, char *symo);
 void free_buf(int *fr, int *count, char *buf,
 		int *f, path_node *node);
-char *read_input(ssize_t *size_getline);
+char *read_input(ssize_t *size_getline, path_node *head);
 char *read_file_as_input(int *fr, ssize_t *size_getline,
 		char **REad, int *ii, int *f);
 char *my_buff(char *symo, ssize_t *size_getline, int *coun);

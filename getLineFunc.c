@@ -4,7 +4,7 @@
 * _getLineFunc - Read The Input from Keyboard
 * Return: Input
 */
-char *_getLineFunc()
+char *_getLineFunc(path_node *head)
 {
 	char *arr, c = 0;
 	int i, memosize = 1024, rd;
@@ -22,7 +22,8 @@ char *_getLineFunc()
 		rd = read(STDIN_FILENO, &c, 1);
 		if (rd == 0)
 		{
-			free(arr);
+			_free(head);
+			free(arr);	
 			exit(EXIT_SUCCESS);
 		}
 		arr[i] = c;

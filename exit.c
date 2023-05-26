@@ -18,12 +18,13 @@ void print_echo(char *Echo)
  * @buff: P2
  * @node: P3
 */
-void handle_exit(char *buf, char **buff, path_node *node, char *Echo)
+void handle_exit(char *buf, char **buff, path_node *node, char *Echo, int Ee)
 {
 	if (_strcmp(buf, "exit") == 0)
 	{
 		free(buf);
-		free(Echo);
+		if (Ee == 1)
+			free(Echo);
 		if (buff[1])
 		{
 			_free(node);

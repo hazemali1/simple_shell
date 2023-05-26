@@ -97,10 +97,10 @@ void free_buf(int *fr, int *count, char *buf, int *f,
  *
  * Return: Buffer
 */
-char *read_input(ssize_t *size_getline)
+char *read_input(ssize_t *size_getline, path_node *head)
 {
 	char *buf;
-		buf = _getLineFunc();
+		buf = _getLineFunc(head);
 		if (*size_getline == -1)
 			exit(EXIT_FAILURE);
 		return (buf);
