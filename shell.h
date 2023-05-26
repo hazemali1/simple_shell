@@ -40,7 +40,7 @@ void parse_command(char *BUf, char *buf, char **buff, int *siz,
 		char *Buff, int *w, int *e);
 void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 		int *w, int *v, pid_t *pid, int *status);
-void handle_exit(char *buf, char **buff, path_node *node);
+void handle_exit(char *buf, char **buff, path_node *node, char *Echo);
 void ch_dir(char **buff, char *home, char *symo, int *count, int *_cd,
 		int *Sta, struct stat *Buf, int *ch);
 char *set_path(path_node *h, int *w, ssize_t *size_getlin,

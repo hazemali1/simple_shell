@@ -45,7 +45,7 @@ while (1)
 	parse_command(BUf, buf, buff, &size, Buff, &w, &e);
 	if (e == 0)
 		handle_echo(buff, Buff, ec, &Ec, Echo, &w, &v, &pid, &status);
-	handle_exit(buf, buff, node);
+	handle_exit(buf, buff, head, Echo);
 	if (cd == 1)
 		ch_dir(buff, home, symo, &count, &_cd, &Sta, &Buf, &ch);
 	h = head;
@@ -54,7 +54,7 @@ while (1)
 	handle_error(&w, &non, buff, Buff, argv[1], &Sta, &er, &sy);
 	if (w == 0 && e == 0 && cd == 0 && v == 0)
 		execute_command(buff, &s, &status);
-
+if (er == 1 || (w == 0 && e == 0 && cd == 0 && v == 0))
 	free(Buff);
 if (Ee == 1)
 {
