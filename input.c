@@ -89,15 +89,16 @@ char *handle_input(char *buf, int *er, int *w, int *e, int *cd,
  * @w: P7
  * @e: P8
 */
-void parse_command(char *BUf, char *buf, char **buff,
+void parse_command(char *BUf, char *buf, char *env, char **buff,
 		int *siz, char *Buff, int *w, int *e)
 {
 	int size = 1;
-	char *env;
 
 	BUf = my_strtok(buf, "\n");
 	env = my_strtok(BUf, " ");
 	buff[0] = env;
+	if (env != NULL && _strcmp(env, "") == 0)
+		env = NULL;
 	if (env == NULL)
 	{
 		Buff = malloc(1);
@@ -105,6 +106,7 @@ void parse_command(char *BUf, char *buf, char **buff,
 		{
 			exit(EXIT_FAILURE);
 		}
+		free(Buff);
 		*w = 0;
 		*e = 1;
 	}

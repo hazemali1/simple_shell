@@ -7,14 +7,16 @@
 */
 path_node *get_path_list()
 {
-	path_node *head = NULL, *node = malloc(sizeof(path_node));
+	path_node *head = NULL;
 	char *path = my_getenv("PATH");
 	char *tok = my_strtok(path, ":");
 
 	while (tok != NULL)
 	{
+		path_node *node = malloc(sizeof(path_node));
+
 		if (node == NULL)
-			exit(EXIT_FAILURE);
+			exit(1);
 		_strcpy(node->str, tok);
 		node->next = head;
 		head = node;
