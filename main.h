@@ -32,7 +32,8 @@ char *_strchr(char *s, char c);
 int _strspn(char *s, char *accept);
 void blockCopy(void *newptr, const void *ptr, unsigned int size);
 void *resizeMemory(void *ptr, unsigned int old_size, unsigned int new_size);
-char **dynamicResizeDP(char **ptr, unsigned int old_size, unsigned int new_size);
+char **dynamicResizeDP(char **ptr,
+		unsigned int old_size, unsigned int new_size);
 char *stringDuplicat(const char *s);
 int getStringLength(const char *s);
 int compareCharacters(char str[], const char *delim);
