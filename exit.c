@@ -107,7 +107,7 @@ char *set_path(path_node *h, int *w, ssize_t *size_getlin,
 
 	while (h != NULL && *w == -1)
 	{
-		Buff = malloc(sizeof(char) * (size_getline + 1 + _strlen(h->str)));
+		Buff = malloc(sizeof(char) * 1024);
 		if (Buff == NULL)
 			exit(EXIT_FAILURE);
 		_strcpy(Buff, h->str);

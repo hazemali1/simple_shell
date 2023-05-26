@@ -54,7 +54,7 @@ while (1)
 	handle_error(&w, &non, buff, Buff, argv[1], &Sta, &er, &sy);
 	if (w == 0 && e == 0 && cd == 0 && v == 0)
 		execute_command(buff, &s, &status);
-if (er == 1)
+
 	free(Buff);
 if (Ee == 1)
 {
