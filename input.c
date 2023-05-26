@@ -94,12 +94,9 @@ void parse_command(char *BUf, char *buf, char **buff,
 {
 	int size = 1;
 	char *env;
-
 	BUf = my_strtok(buf, "\n");
 	env = my_strtok(BUf, " ");
 	buff[0] = env;
-	if (_strcmp(env, " ") == 0)
-		env = NULL;
 	if (env == NULL)
 	{
 		Buff = malloc(1);
@@ -152,7 +149,7 @@ void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 {
 		int Ec = *ECc;
 
-		if (_strcmp(buff[0], "echo") == 0)
+		if(buff[0][0] == 'e' && buff[0][1] == 'c' && buff[0][2] == 'h' && buff[0][3] == 'o')
 		{
 			if (buff[1] == NULL)
 				buff[1] = " ";
