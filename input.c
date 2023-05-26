@@ -98,6 +98,8 @@ void parse_command(char *BUf, char *buf, char **buff,
 	BUf = my_strtok(buf, "\n");
 	env = my_strtok(BUf, " ");
 	buff[0] = env;
+	if (_strcmp(env, "") == 0)
+		env = NULL;
 	if (env == NULL)
 	{
 		Buff = malloc(1);
@@ -105,6 +107,7 @@ void parse_command(char *BUf, char *buf, char **buff,
 		{
 			exit(EXIT_FAILURE);
 		}
+		free(Buff);
 		*w = 0;
 		*e = 1;
 	}

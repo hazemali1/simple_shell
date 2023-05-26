@@ -12,12 +12,12 @@ int main(int argc, char *argv[])
 {
 	char *buff[1024], *buf, *Buff, *BUf = NULL,
 		*home = my_getenv("HOME"), **REad, symo[1024], *Echo, ec[1024];
-	ssize_t size_getline;
+	ssize_t size_getline = 0;
 	size_t d = 0;
 	pid_t s, pid;
 	int w = -1, size = 1, e = 0, non = 0, cd = 0, ch = -1, v = 0, er = 0,
 	    f = 0, i = 0, fr = 0, _cd = 0, sy = 0, che = 1, count = 0, Ec = 1,
-	    status, And = 0, pop = 0, Sta = 0, Ee = 0;
+	    status, And = 0, pop = 0, Sta = 0, Ee = 0, ggg = 0;
 	path_node *node = NULL, *head, *h;
 	struct stat Buf;
 
@@ -61,7 +61,9 @@ if (Ee == 1)
 	free(Echo);
 	Ee = 0;
 }
-
+if (ggg == 0)
+	_free(head);
+ggg = 1;
 reset_arr(&count, &status, &Sta, &And, &pop, symo);
 reset(&Sta, &pop, &And, &Ec, &che, &sy, &_cd, &v, &cd, &e, &w, &size, &d);
 free_buf(&fr, &count, buf, &f, node);
