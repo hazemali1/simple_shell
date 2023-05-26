@@ -36,11 +36,11 @@ char **read_file(char *path, int *non, int *f);
 void parse_input(char *buf, char *symo, int *pop, int *And, int *coun);
 char *handle_input(char *buf, int *er, int *w, int *e, int *cd,
 		int *v, struct stat *Buf, int *sy, int *Sta);
-void parse_command(char *BUf, char *buf, char *env, char **buff, int *siz,
+void parse_command(char *BUf, char *buf, char **buff, int *siz,
 		char *Buff, int *w, int *e);
 void handle_echo(char **buff, char *Buff, char *ec, int *ECc, char *Echo,
 		int *w, int *v, pid_t *pid, int *status);
-void handle_exit(char *buf, char **buff);
+void handle_exit(char *buf, char **buff, path_node *node);
 void ch_dir(char **buff, char *home, char *symo, int *count, int *_cd,
 		int *Sta, struct stat *Buf, int *ch);
 char *set_path(path_node *h, int *w, ssize_t *size_getlin,
@@ -72,6 +72,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *fill_all_array(void *a, int el, unsigned int len);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int _strncmp(char *s1, char *s2, size_t n);
-char *_memset(char *s, char b, unsigned int n);
 
 #endif
