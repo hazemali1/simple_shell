@@ -17,7 +17,7 @@ int _strncmp(char *s1, char *s2, size_t n);
 char *my_buff(char *symo, ssize_t *size_getline, int *coun)
 {
 	int count = *coun;
-	char *buf = malloc(sizeof(char) * _strlen(symo));
+	char *buf = malloc(sizeof(char) * 1024);
 
 	if (buf == NULL)
 	{

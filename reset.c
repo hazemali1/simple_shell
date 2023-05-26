@@ -79,10 +79,9 @@ void reset_arr(int *coun, int *status, int *Sta, int *And, int *pop,
 void free_buf(int *fr, int *count, char *buf, int *f,
 		path_node *node)
 {
-	if (*fr == 0 && *count == 0)
+	(void)fr;
+	(void)count;
 		free(buf);
-	else if (*count == 0)
-		buf = NULL;
 	if (*f == 2)
 	{
 		_free(node);

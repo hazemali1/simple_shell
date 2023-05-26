@@ -10,8 +10,8 @@
 */
 int main(int argc, char *argv[])
 {
-	char *buff[1024], *buf, *Buff, *BUf = NULL,
-		*home = my_getenv("HOME"), **REad, symo[1024], *Echo, ec[1024];
+	char *buff[1024], *buf = NULL, *Buff, *BUf = NULL,
+		*home = my_getenv("HOME"), **REad, symo[1024] = "", *Echo, ec[1024];
 	ssize_t size_getline = 0;
 	size_t d = 0;
 	pid_t s, pid;
@@ -21,15 +21,15 @@ int main(int argc, char *argv[])
 	path_node *node = NULL, *head, *h;
 	struct stat Buf;
 
-	Echo = malloc(sizeof(char) * 1024);
-	Ee = 1;
-	if (Echo == NULL)
-		exit(1);
 	if (isatty(STDIN_FILENO) == 0)
 		non = 1;
 	if (argc == 2)
 		REad = read_file(argv[1], &non, &f);
 	head = get_path_list();
+	Echo = malloc(sizeof(char) * 1024);
+	Ee = 1;
+	if (Echo == NULL)
+		exit(1);
 while (1)
 {
 	if (non == 0 && count == 0)
