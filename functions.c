@@ -27,39 +27,30 @@ char *readCommand(void)
  * executeCommand - Executes a command
  * @command: The command to execute
  */
+
 void executeCommand(char *command)
 {
-	pid_t pid;
+	char *args[MAX_INPUT_LENGTH];
+	/* Array to store command and arguments */
+	int argc = 0; /* Argument count */
 
 	/* Remove the newline character at the end */
 	command[strcspn(command, "\n")] = '\0';
 
-	/* Create a child process */
-	pid = fork();
-
-	if (pid == -1)
+	/* Tokenize the command into arguments */
+	char *token = strtok(command, " ");
+	while (token != NULL)
 	{
-		perror("fork");
-		exit(EXIT_FAILURE);
+		args[argc++] = token;
+		token = strtok(NULL, " ");
 	}
-	else if (pid == 0)
-	{
-		/* Child process */
+	args[argc] = NULL;  /* Set the last element to NULL as required by execvp */
 
-		/* Execute the command */
-		if (execlp(command, command, NULL) == -1)
-		{
-			fprintf(stderr, "%s: command not found\n", command);
-			exit(EXIT_FAILURE);
-		}
-	}
-	else
-	{
-		/* Parent process */
-		int status;
+	/* Execute the command */
+	execvp(args[0], args);
 
-		waitpid(pid, &status, 0);
-	}
+	/* If execvp returns, it means the command was not found */
+	fprintf(stderr, "%s: command not found\n", args[0]);
+	exit(EXIT_FAILURE);
 }
-
 
