@@ -14,6 +14,7 @@ path_node *get_path_list()
 	while (tok != NULL)
 	{
 		path_node *node = malloc(sizeof(path_node));
+
 		if (node == NULL)
 			exit(EXIT_FAILURE);
 		_strcpy(node->str, tok);
