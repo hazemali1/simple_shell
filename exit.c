@@ -20,7 +20,7 @@ void print_echo(char *Echo)
 */
 void handle_exit(char *buf, char **buff, path_node *node, char *Echo, int Ee)
 {
-	if (_strcmp(buf, "exit") == 0)
+	if (buf[0] == 'e' && buf[1] == 'x' && buf[2] == 'i' && buf[3] == 't')
 	{
 		free(buf);
 		if (Ee == 1)
